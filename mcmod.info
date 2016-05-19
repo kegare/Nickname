@@ -4,7 +4,7 @@
     "modid": "nickname",
     "name": "Nickname",
     "description": "Player can specify the nickname",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "url": "http://kegare.github.io",
     "updateJSON": "",
     "authorList": ["kegare"],

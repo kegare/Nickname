@@ -52,7 +52,7 @@ public class CommandNickname extends CommandBase
 				NicknameManager.setNickname(uuid, username);
 
 				TextComponentString text = new TextComponentString("Your nickname has been set to \"" + username + "\"");
-				text.getChatStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
 				player.addChatMessage(text);
 			}
@@ -61,7 +61,7 @@ public class CommandNickname extends CommandBase
 				NicknameManager.setNickname(uuid, nickname);
 
 				TextComponentString text = new TextComponentString("Your nickname has been set to \"" + nickname + "\"");
-				text.getChatStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+				text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
 				player.addChatMessage(text);
 			}

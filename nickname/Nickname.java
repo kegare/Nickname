@@ -65,7 +65,7 @@ public class Nickname
 						NicknameManager.setNickname(uuid, username);
 
 						TextComponentString text = new TextComponentString("Your nickname has been set to \"" + username + "\"");
-						text.getChatStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+						text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
 						player.addChatMessage(text);
 					}
@@ -74,7 +74,7 @@ public class Nickname
 						NicknameManager.setNickname(uuid, nickname);
 
 						TextComponentString text = new TextComponentString("Your nickname has been set to \"" + nickname + "\"");
-						text.getChatStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
+						text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
 						player.addChatMessage(text);
 					}
@@ -87,7 +87,7 @@ public class Nickname
 			catch (Exception e)
 			{
 				TextComponentString text = new TextComponentString("Usage: @nickname <[Nickname]|default>");
-				text.getChatStyle().setColor(TextFormatting.DARK_GRAY);
+				text.getStyle().setColor(TextFormatting.DARK_GRAY);
 
 				player.addChatMessage(text);
 			}
