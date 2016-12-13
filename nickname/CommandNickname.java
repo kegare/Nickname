@@ -16,13 +16,13 @@ import net.minecraft.util.text.TextFormatting;
 public class CommandNickname extends CommandBase
 {
 	@Override
-	public String getCommandName()
+	public String getName()
 	{
 		return "nickname";
 	}
 
 	@Override
-	public String getCommandUsage(ICommandSender sender)
+	public String getUsage(ICommandSender sender)
 	{
 		return "/nickname <Player> <[Nickname]|default>";
 	}
@@ -38,7 +38,7 @@ public class CommandNickname extends CommandBase
 	{
 		if (args.length < 2)
 		{
-			throw new WrongUsageException(getCommandUsage(sender));
+			throw new WrongUsageException(getUsage(sender));
 		}
 		else
 		{
@@ -54,7 +54,7 @@ public class CommandNickname extends CommandBase
 				TextComponentString text = new TextComponentString("Your nickname has been set to \"" + username + "\"");
 				text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
-				player.addChatMessage(text);
+				player.sendMessage(text);
 			}
 			else
 			{
@@ -63,7 +63,7 @@ public class CommandNickname extends CommandBase
 				TextComponentString text = new TextComponentString("Your nickname has been set to \"" + nickname + "\"");
 				text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
-				player.addChatMessage(text);
+				player.sendMessage(text);
 			}
 
 			NicknameManager.saveNicknames();
@@ -73,9 +73,9 @@ public class CommandNickname extends CommandBase
 	}
 
 	@Override
-	public List<String> getTabCompletionOptions(MinecraftServer server, ICommandSender sender, String[] args, BlockPos pos)
+	public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args, BlockPos pos)
 	{
-		return args.length == 1 ? getListOfStringsMatchingLastWord(args, server.getAllUsernames()) : Collections.<String>emptyList();
+		return args.length == 1 ? getListOfStringsMatchingLastWord(args, server.getOnlinePlayerNames()) : Collections.<String>emptyList();
 	}
 
 	@Override

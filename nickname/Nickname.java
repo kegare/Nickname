@@ -67,7 +67,7 @@ public class Nickname
 						TextComponentString text = new TextComponentString("Your nickname has been set to \"" + username + "\"");
 						text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
-						player.addChatMessage(text);
+						player.sendMessage(text);
 					}
 					else
 					{
@@ -76,7 +76,7 @@ public class Nickname
 						TextComponentString text = new TextComponentString("Your nickname has been set to \"" + nickname + "\"");
 						text.getStyle().setColor(TextFormatting.GRAY).setItalic(Boolean.valueOf(true));
 
-						player.addChatMessage(text);
+						player.sendMessage(text);
 					}
 
 					NicknameManager.saveNicknames();
@@ -89,7 +89,7 @@ public class Nickname
 				TextComponentString text = new TextComponentString("Usage: @nickname <[Nickname]|default>");
 				text.getStyle().setColor(TextFormatting.DARK_GRAY);
 
-				player.addChatMessage(text);
+				player.sendMessage(text);
 			}
 
 			event.setCanceled(true);
