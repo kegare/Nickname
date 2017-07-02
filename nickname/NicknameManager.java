@@ -11,8 +11,6 @@ import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import net.minecraftforge.fml.common.FMLLog;
-
 public class NicknameManager
 {
 	public static final Map<String, String> NICKNAME_MAP = Maps.newHashMap();
@@ -34,7 +32,7 @@ public class NicknameManager
 		}
 		catch (Exception e)
 		{
-			FMLLog.log(Level.ERROR, e, "An error occurred while trying to load nicknames");
+			NicknameLog.log(Level.ERROR, e, "An error occurred while trying to load nicknames");
 		}
 	}
 
@@ -53,7 +51,7 @@ public class NicknameManager
 		}
 		catch (Exception e)
 		{
-			FMLLog.log(Level.ERROR, e, "An error occurred while trying to save nicknames");
+			NicknameLog.log(Level.ERROR, e, "An error occurred while trying to save nicknames");
 		}
 	}
 
